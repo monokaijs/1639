@@ -33,12 +33,12 @@ class Order
         return $this->id;
     }
 
-    public function getOwner(): ?int
+    public function getOwner(): ?string
     {
         return $this->owner;
     }
 
-    public function setOwner(int $owner): self
+    public function setOwner(string $owner): self
     {
         $this->owner = $owner;
 

@@ -27,6 +27,12 @@ class OrderProduct
      */
     private $orderId;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    public $quantity;
+
+
     public function getId(): ?int
     {
         return $this->id;
