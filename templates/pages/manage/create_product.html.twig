@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Manage Products{% endblock %}
+
+{% block body %}
+    <div class="bg-dark m-b-30">
+        <div class="container">
+            <div class="row p-b-60 p-t-60">
+
+                <div class="col-md-12 m-auto text-white p-b-30">
+
+                    <h1>Create Product</h1>
+                    <p class="opacity-75">
+                        Add new product to system...
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="pull-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card m-b-30">
+                        <div class="card-header">
+                            <h5 class="m-b-0">
+                                Product information
+                            </h5>
+                            <p class="m-b-0 text-muted">
+                                Please fill in information of the new product...
+                            </p>
+                        </div>
+                        <div class="card-body ">
+                            {{ form_start(form) }}
+                                {{ form_errors(form) }}
+                                {{ form_row(form.name) }}
+                                {{ form_row(form.price) }}
+                                {{ form_row(form.description) }}
+                                {{ form_row(form.available) }}
+                                {{ form_row(form.preview) }}
+                                <div class="form-group">
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                    <!--widget card ends-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

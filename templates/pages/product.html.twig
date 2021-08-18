@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block body %}
+    <div class="bg-dark m-b-30">
+        <div class="container">
+            <div class="row p-b-60 p-t-60">
+                <div class="col-md-12 m-auto text-white p-b-30">
+                    <h1>{{ product.name }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pull-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="preview-image mt-5 mb-5" style="height: 300px; background-size: contain; background-image: url('/uploads/brochures/{{ product.preview }}'); background-repeat: no-repeat; background-position: center">
+
+                            </div>
+
+                            <hr/>
+
+                            <div>
+                                <div class="list-unstyled">
+                                    <div class="media">
+                                        <div class="avatar mr-3  avatar-sm">
+                                            <img src="/assets/img/users/user-1.jpg" alt="..."  class="avatar-img rounded-circle">
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="mt-0 mb-1"> Semiha Yerman <span class="text-muted ml-3 small">2hrs ago</span>
+                                            </h6>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus et
+                                                id iusto maiores natus, placeat. Aspernatur consequatur culpa
+                                                dignissimos dolor eligendi explicabo, nemo neque odit officiis provident
+                                                quo reprehenderit veniam?
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="avatar mr-3  avatar-sm">
+                                            <img src="/assets/img/users/user-2.jpg" alt="..."
+                                                 class="avatar-img rounded-circle">
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="mt-0 mb-1"> Severín Chovanec <span class="text-muted ml-3 small">3hrs ago</span>
+                                            </h6>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+                                                consequatur dicta dignissimos dolore earum explicabo, facilis id
+                                                incidunt ipsam magni nobis odit quasi quia quo recusandae reprehenderit
+                                                ut veritatis vitae!
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+                                    <div class="row align-items-start">
+                                        <div class="col-auto">
+                                            <div class="avatar avatar-sm">
+                                                <img src="/assets/img/users/user-3.jpg" alt="..." class="avatar-img rounded-circle">
+                                            </div>
+                                        </div>
+                                        <div class="col ml--2">
+                                            <form>
+                                                <label class="sr-only">Leave a comment...</label>
+                                                <textarea class="form-control" placeholder="Leave a comment" rows="2"></textarea>
+                                            </form>
+                                        </div>
+                                    </div> <!-- / .row -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>{{ product.name }}</h4>
+                            <h5 class="font-primary text-danger p-t-10">
+                                {{ product.price|format_currency('VND') }}
+                            </h5>
+                            <p>
+                                {{ product.description }}
+                            </p>
+                            <h6>
+                                Khuyến mãi
+                            </h6>
+                            <ul>
+                                <li>Tặng gói iCloud 50GB đến 15 tháng</li>
+                                <li>Giảm thêm 3% khi mua Online trả thẳng tại Đà Nẵng/ Khánh Hòa đến 22/08</li>
+                                <li>Giảm đến 300.000đ khi mua bảo hành (rơi vỡ + vào nước) kèm máy</li>
+                                <li>Giảm ngay 10% AirTag khi mua kèm iPhone</li>
+                                <li>Thu cũ đổi mới - Trợ giá ngay 15%</li>
+                                <li>Tặng Bảo hành 2 năm chính hãng</li>
+                            </ul>
+                            <form method="POST" action="#">
+                                <button class="btn btn-block btn-lg btn-success" type="submit" name="add-to-cart" value="{{ product.id }}">
+                                    <i class="mdi mdi-cart"></i>
+                                    Thêm vào giỏ hàng
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

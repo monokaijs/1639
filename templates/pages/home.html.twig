@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Products{% endblock %}
+
+{% block body %}
+    <div class="bg-dark m-b-30">
+        <div class="container">
+            <div class="row p-b-60 p-t-60">
+
+                <div class="col-md-8 m-auto text-white p-b-30">
+
+                    <h1>Products</h1>
+                    <p class="opacity-75">
+                        Browse around to find your suitable product...
+                    </p>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <form action="#" class="form-dark">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 m-auto text-white p-b-30">
+                    <div class="text-md-right">
+                        <a href="/manage/addProduct" class="btn btn-success"> <i class="mdi mdi-plus"></i> Add New Product</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="pull-up">
+        <div class="container">
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card m-b-30">
+                            <div class="card-body">
+                                <div class="card-controls">
+                                    <a href="#" class="">
+                                        <i class="mdi mdi-bookmark "></i>
+                                    </a>
+                                </div>
+                                <div class="text-center">
+                                    <img src="/uploads/brochures/{{ product.preview }}" width="150" alt="">
+                                </div>
+                            </div>
+
+                            <div class="bg-dark text-center rounded-bottom text-white p-all-15">
+                                <p class="text-warning m-0">
+                                    <i class="mdi mdi-star"></i>
+                                    <i class="mdi mdi-star"></i>
+                                    <i class="mdi mdi-star"></i>
+                                    <i class="mdi mdi-star-half"></i>
+                                </p>
+                                <a href="/products/{{ product.id }}">
+                                    <h5 class="font-primary">{{ product.name }}</h5>
+                                    <p class="opacity-75 m-0">Products</p>
+                                    <h5 class="font-primary p-t-10">{{ product.price|format_currency('VND') }}</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

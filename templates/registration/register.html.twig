@@ -1,0 +1,50 @@
+{% extends 'auth.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+    <main class="admin-main">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-lg-4  bg-white">
+                    <div class="row align-items-center m-h-100">
+                        <div class="mx-auto col-md-8">
+                            {{ form_start(registrationForm) }}
+                                <div class="p-b-20 text-center">
+                                    <p>
+                                        <img src="/assets/img/logo.svg" width="80" alt="">
+                                    </p>
+                                </div>
+                                <h3 class="text-center p-b-20 fw-400">Register</h3>
+                                {{ form_errors(registrationForm) }}
+                                {{ form_row(registrationForm.fullName) }}
+                                {{ form_row(registrationForm.phoneNumber) }}
+                                {{ form_row(registrationForm.address) }}
+                                {{ form_row(registrationForm.email) }}
+                                {{ form_row(registrationForm.plainPassword, {
+                                    label: 'Password'
+                                }) }}
+                                {{ form_row(registrationForm.agreeTerms) }}
+                                <input type="hidden" name="_csrf_token"
+                                       value="{{ csrf_token('authenticate') }}"
+                                >
+
+                                <button type="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
+                            {{ form_end(registrationForm) }}
+                            <p class="text-right p-t-10">
+                                <a href="/login" class="text-underline">Already a user?</a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-8 d-none d-md-block bg-cover" style="background-image: url('/assets/img/auth.svg');">
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+{% endblock %}
